@@ -37,7 +37,7 @@ public class Desafio1 {
     private static final int ODD_INTERVAL = 2;
     public static final int FORBIDDEN_LENGTH = 1;
 
-    public static String formatString(String phone){
+    public static String solution(String phone){
 
         phone = phone.replaceAll("[^a-zA-Z0-9]", "");
 

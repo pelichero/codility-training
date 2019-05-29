@@ -48,9 +48,9 @@ public class Desafio2 {
     private static final int MAXIMUM_ADJACENT_VALUE = 100000000;
     private static final int DOESNT_CONTAIN_ANY_VALUE_STRICTLY_BETWEEN_2_INDICES = 0;
 
-    public static int minimalAdjacentValue(int[] A) {
+    public static int solution(int[] A) {
 
-        List<Integer> numbers = Arrays.stream(A).boxed().collect(Collectors.toList());
+        List<Integer> numbers = Arrays.stream(A).boxed().sorted(Integer::compareTo).collect(Collectors.toList());
 
         if(hasEqualValues(numbers)){
             return DOESNT_CONTAIN_ANY_VALUE_STRICTLY_BETWEEN_2_INDICES;
@@ -63,8 +63,11 @@ public class Desafio2 {
 
     private static int verifyAdjacents(List<Integer> numbers, int index, int higherAdj) {
 
-        if(numbers.size() <= index)
+        if(numbers.size() <= index) {
             return higherAdj;
+        }
+
+        System.out.println("\n ========== Verificando pares de "+numbers.get(index));
 
         int adjacentValue = 0;
 
@@ -73,9 +76,9 @@ public class Desafio2 {
                 continue;
             }
 
-            int number = numbers.get(index) - numbers.get(i) * -1;
+            int number = numbers.get(index) - numbers.get(i);
 
-            adjacentValue = numbers.stream().filter(n -> n <= number).min(Integer::compareTo).orElse(0);
+            adjacentValue = numbers.stream().filter(n -> n <= number).min(Integer::compareTo).orElse(-2);
 
             System.out.println("O numero adjacente entre "+numbers.get(index)+"["+index+"] e "+numbers.get(i)+"["+i+"] é : " + adjacentValue);
         }
