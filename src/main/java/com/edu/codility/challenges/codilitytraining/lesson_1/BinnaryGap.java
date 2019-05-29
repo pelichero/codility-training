@@ -24,7 +24,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BinnaryGap {
 
-    public int getBinnaryGap(int N){
+    public static int binnaryGap(int N){
         return 0;
     }
 
