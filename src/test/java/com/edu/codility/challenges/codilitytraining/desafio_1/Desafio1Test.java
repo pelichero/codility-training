@@ -35,7 +35,7 @@ public class Desafio1Test {
 
     @Test
     public void test5(){
-        Assert.assertEquals("123-456-78", Desafio1.solution("D3412531456156SD1F65ADS14F8941T1T56FDGDSFG0906-349506-93456"));
+        Assert.assertEquals("D34-125-314-561-56S-D1F-65A-DS1-4F8-941-T1T-56F-DGD-SFG-090-634-950-693-456", Desafio1.solution("D3412531456156SD1F65ADS14F8941T1T56FDGDSFG0906-349506-93456"));
     }
 
 
